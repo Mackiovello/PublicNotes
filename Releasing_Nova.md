@@ -30,9 +30,9 @@ This package works the same as with Bluestar - it has to be released manually. C
 
 ### Test against Starcounter.ErrorCodes
 
-Nova also relies on the NuGet package Starcounter.ErrorCodes. To test against this package, follow the same steps as for testing against Starcounter.QueryProcessor.
+Nova also relies on the NuGet package Starcounter.ErrorCodes. To test against this package, follow the same steps as for testing against Starcounter.QueryProcessor except that this package is in its own repository: https://github.com/Starcounter/Starcounter.ErrorCodes. Follow the [build instructions](https://github.com/Starcounter/Starcounter.ErrorCodes), exchange the reference in Nova, and run the tests in Nova.
 
-This package works the same as with Bluestar - it has to be released manually. Consult with the platform team to release a new version of this package.
+This package works the same as with Bluestar - it has to be released manually. Consult with the platform team, or the current maintainer of the project to release a new version of this package.
 
 ### Publish a new version of Bluestar
 
