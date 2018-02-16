@@ -25,3 +25,19 @@ docker run -it --storage-opt "size=50GB" --cpu-count 8 -m 16g -p 8080:8080 -p 81
 ```
 Error response from daemon: pull access denied for starcounter/docker.windows.sc.2.3.2, repository does not exist or may require 'docker login'
 ```
+
+* Execute `& $Env:ProgramFiles\Docker\Docker\DockerCli.exe -SwitchDaemon` in PowerShell
+
+* Execute this command again:
+
+```
+docker run -it --storage-opt "size=50GB" --cpu-count 8 -m 16g -p 8080:8080 -p 8181:8181 -e "StarcounterDataDir=C:/Starcounter/shared/Personal" -v %~dp0ServerSampleData:C:/Starcounter/shared starcounter/docker.windows.sc.2.3.2
+```
+
+* Get an error:
+
+```
+Unable to find image 'starcounter/docker.windows.sc.2.3.2:latest' locally
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: pull access denied for starcounter/docker.windows.sc.2.3.2, repository does not exist or may require 'docker login'.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+```
