@@ -8,8 +8,8 @@ When releasing a new version of Nova, it should be released together with a spec
 2. Setup the environment to be able to build level0 by following the instructions here: https://github.com/Starcounter/level0#windows-requirements
 3. Build level0 by running `cmake_vs.bat Release`. This has to be run as an administrator
 4. Set the `StarcounterBin` environment variable to the directory where the level0 binaries are, such as `C:\Starcounter\level0\msbuild\x64\Release`
-5. Clone Nova: `git clone https://github.com/Starcounter/Starcounter.Core.git`
-6. Execute `Starcounter.Core/test/run_all_tests.bat`
+5. Clone Nova: `git clone https://github.com/Starcounter/Starcounter.Nova.git`
+6. Execute `Starcounter.Nova/test/run_all_tests.bat`
 7. If the tests don't pass, they have to be fixed before proceding with the following steps
 
 For Linux, the steps are the same, except for step 2, 3, and 6.
