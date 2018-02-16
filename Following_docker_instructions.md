@@ -7,9 +7,7 @@ Trying to follow the instructions here: https://github.com/Starcounter/Starcount
 * Execute this command:
 
 ```
-docker run -it --storage-opt "size=50GB" --cpu-count 8 -m 16g -p 8080:8080 -p 8181:8181 -e "Star
-counterDataDir=C:/Starcounter/shared/Personal" -v %~dp0ServerSampleData:C:/Starcounter/shared starcounter/docker.windows
-.sc.2.3.2
+docker run -it --storage-opt "size=50GB" --cpu-count 8 -m 16g -p 8080:8080 -p 8181:8181 -e "StarcounterDataDir=C:/Starcounter/shared/Personal" -v %~dp0ServerSampleData:C:/Starcounter/shared starcounter/docker.windows.sc.2.3.2
 ```
 
 **There's a "cmd" at the end of the command above in the README. Did not include it since it looked like a typo** 
