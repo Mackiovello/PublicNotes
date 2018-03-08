@@ -37,7 +37,7 @@ public class Program
 
 With this, you're guaranteed to always send out a confirmation email after someone creates a new order. The hook is triggered no matter where the order is created, as long as its in the same database. 
 
-The fact that Post-commit hooks execute after the transaction is the differentiator from normal commit hooks where the hook is executed as part of the transaction.
+The fact that post-commit hooks execute after the transaction is the differentiator from normal commit hooks where the hook is executed as part of the transaction.
 
 ## API
 
