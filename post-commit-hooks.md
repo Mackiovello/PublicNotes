@@ -35,7 +35,7 @@ public class Program
 }
 ```  
 
-With this, you're guaranteed to always send out a confirmation email after someone creates a new order. The hook is triggered no matter where the order is created, as long as its in the same database. 
+With this, you're guaranteed to always send out a confirmation email after someone creates a new order. The hook is triggered no matter where the order is created, as long as its in the same database and the hook is registered. 
 
 The fact that post-commit hooks execute after the transaction is the differentiator from normal commit hooks where the hook is executed as part of the transaction.
 
@@ -55,7 +55,9 @@ The `DatabaseClass` in the code sample above is the database class that should t
 
 ## Invocation
 
-The hook is invoked when an instance of the specified class is inserted, updated, or deleted. For example, say that we have these four post-commit hooks:
+The hook is invoked when an instance of the specified class is inserted, updated, or deleted. This assumes that the hook is registered and that the app with the hook is running.  
+
+For example, say that we have these four post-commit hooks:
 
 ```cs
 Hook<Order>.AfterCommitInsert += (sender, id) => Debug.WriteLine("AfterCommitInsert-Order");
