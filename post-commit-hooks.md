@@ -55,7 +55,7 @@ The `DatabaseClass` in the code sample above is the database class that should t
 
 ## Invocation
 
-The hook is invoked when the an instance of the specified class is inserted, updated, or deleted. For example, say that we have these four post-commit hooks:
+The hook is invoked when an instance of the specified class is inserted, updated, or deleted. For example, say that we have these four post-commit hooks:
 
 ```cs
 Hook<Order>.AfterCommitInsert += (sender, id) => Debug.WriteLine("AfterCommitInsert-Order");
