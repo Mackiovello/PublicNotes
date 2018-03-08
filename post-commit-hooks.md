@@ -41,7 +41,7 @@ The fact that post-commit hooks execute after the transaction is the differentia
 
 ## API
 
-There are three different Post-commit hooks:
+There are three different post-commit hooks:
 
 ```cs
 Hook<DatabaseClass>.AfterCommitInsert += (sender, id) => { /* Implementation */ };
@@ -55,7 +55,7 @@ The `DatabaseClass` in the code sample above is the database class that should t
 
 ## Invocation
 
-The hook is invoked when the an instance of the specified class is inserted, updated, or deleted. For example, say that we have these four Post-commit hooks:
+The hook is invoked when the an instance of the specified class is inserted, updated, or deleted. For example, say that we have these four post-commit hooks:
 
 ```cs
 Hook<Order>.AfterCommitInsert += (sender, id) => Debug.WriteLine("AfterCommitInsert-Order");
@@ -127,7 +127,7 @@ AfterCommitInsert-Person
 AfterCommitInsert-Person
 ```
 
-If you invoke a Post-commit hook from inside a commit hook, it runs in an infinite loop until you run out of memory or something else stops the execution:
+If you invoke a post-commit hook from inside a commit hook, it runs in an infinite loop until you run out of memory or something else stops the execution:
 
 ```cs
 // This will cause an infinite loop once invoked
@@ -137,7 +137,7 @@ Hook<Order>.AfterCommitInsert += (sender, id) =>
 };
 ```
 
-Also, Post-commit hooks are not guaranteed to execute right after the transaction. It's possible that another transaction executes before executing the hook. Thus, you can't assume that the database state that existed after the transaction that triggered the hook is still the same:
+Also, post-commit hooks are not guaranteed to execute right after the transaction. It's possible that another transaction executes before executing the hook. Thus, you can't assume that the database state that existed after the transaction that triggered the hook is still the same:
 
 ```cs
 Hook<Person>.AfterCommitInsert += (sender, id) => 
