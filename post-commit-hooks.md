@@ -44,9 +44,9 @@ The fact that post-commit hooks execute after the transaction is the differentia
 There are three different Post-commit hooks:
 
 ```cs
-Hook<DatabaseClass>.AfterCommitInsert += (sender, id) => { /* Implementation */ }
-Hook<DatabaseClass>.AfterCommitUpdate += (sender, id) => { /* Implementation */ }
-Hook<DatabaseClass>.AfterCommitDelete += (sender, id) => { /* Implementation */ }
+Hook<DatabaseClass>.AfterCommitInsert += (sender, id) => { /* Implementation */ };
+Hook<DatabaseClass>.AfterCommitUpdate += (sender, id) => { /* Implementation */ };
+Hook<DatabaseClass>.AfterCommitDelete += (sender, id) => { /* Implementation */ };
 ```
 
 Each event uses the standard `EventHandler<T>` delegate, where `T` is `ulong`. The ID provided to the hook is the unique object ID of the triggering object. The sender is an `object` that can be cast to a `Task` that represents the asyncronous operation for the transaction that triggered the hook.
