@@ -212,7 +212,7 @@ public class Program
 }
 ```
 
-There are two of things to avoid when registering post-commit hooks: don't register them in a transaction or in another hook.
+When registering post-commit hooks, avoid two things: registering the hooks in a transaction or in another hook.
 
 The reason for this is that the transaction may have to restart if there's a conflict which would register the hook several times. If you register it in another hook the inner hook will be registered every time the outer hook is called. 
 
