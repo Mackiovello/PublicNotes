@@ -49,7 +49,7 @@ Hook<DatabaseClass>.AfterCommitUpdate += (sender, id) => { /* Implementation */ 
 Hook<DatabaseClass>.AfterCommitDelete += (sender, id) => { /* Implementation */ };
 ```
 
-Each event uses the standard `EventHandler<T>` delegate, where `T` is `ulong`. The ID provided to the hook is the unique object ID of the triggering object. The sender is an `object` that can be cast to a `Task` that represents the asyncronous operation for the transaction that triggered the hook.
+Each event uses the standard `EventHandler<T>` delegate, where `T` is `ulong`. The ID provided to the hook is the unique object ID of the triggering object. The sender is an `object` that you can cast to a `Task` that represents the asynchronous operation for the transaction that triggered the hook. Read more about how you can use this with a custom scheduler in the [post-commit hooks with a custom scheduler](LINK HERE) section.
 
 The `DatabaseClass` in the code sample above is the database class that should trigger the hook when an instance from the class is inserted, updated, or deleted. 
 
@@ -241,7 +241,7 @@ In insert hook
 In insert hook
 ```
 
-## Advanced: post-commit hooking using a custom scheduler
+## Advanced: post-commit hooks with a custom scheduler
 Starcounter uses its default scheduling mechanism to schedule tasks that the post-commit hooks execute in. Currently, that's an instance of `DbTaskScheduler`.
 
 Using a complementary API, it's possible to provide a custom scheduler when you register post-commit hooks, forcing Starcounter to utilize that instead of the built-in default.
