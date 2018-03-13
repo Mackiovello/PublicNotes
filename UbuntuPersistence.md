@@ -185,7 +185,9 @@ $ export StarcounterBin=/home/Mackiovello/level0/make/x64/Release/
 
 10. Set `LD_LIBRARY_PATH`
 
+```
 export LD_LIBRARY_PATH=$StarcounterBin
+```
 
 11. Build and run MinimalApp
 
