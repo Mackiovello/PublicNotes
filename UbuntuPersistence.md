@@ -1,4 +1,4 @@
-# Make Nova persistence of Linux
+# Nova persistence on Linux
 
 Issue: https://github.com/Starcounter/level0/issues/596
 
