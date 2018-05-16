@@ -42,9 +42,11 @@ Write down the version number of the pushed NuGet package - it will be used when
 
 ### Publish a new version of Nova
 
-1. In `global.props` in the root of the Starcounter.Core directory increment `VersionPrefix` according to semver 2.0
-2. Create a commit with only the change from step 1, set the message to the version, such as v0.8.0-alpha
-3. Add a tag to the commit: `git tag -a "v0.8.0-alpha" -m "v0.8.0-alpha"`
-4. Pack and publish to NuGet by running `pack_and_push.bat`
-5. Push the tag and commit: `git push && git push --tags`
-6. Write a release on GitHub and note that it's compatible with the specific version of Bluestar that you wrote down earlier.
+1. In `global.props` in the root of the Starcounter.Nova directory increment `VersionPrefix` according to semver 2.0
+2. Create a commit with only the change from step 1 to a new branch, set the message to the version, such as v0.8.0-alpha
+3. Push the new branch and create a PR that you assign to one of the Admins of Nova
+4. When approved, merge the PR
+5. Add a tag to the commit: `git tag -a "v0.8.0-alpha" -m "v0.8.0-alpha"`
+6. Pack and publish to NuGet by running `pack_and_push.bat`
+7. Push the tag: `push --tags`
+8. Write a release on GitHub and note that it's compatible with the specific version of Bluestar that you wrote down earlier.
