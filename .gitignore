@@ -1,2 +1,6 @@
 Nova/nova_coverage/configuration.py
 *.pyc
+bin/
+obj/
+*.log
+*.cfg
